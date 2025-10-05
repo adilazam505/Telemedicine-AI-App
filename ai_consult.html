@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4 mt-4">
+    <h2 class="mb-4">AI Symptom Checker</h2>
+    <form method="post" action="/ai/consult/form">
+        <div class="mb-3">
+            <label class="form-label">Describe your symptoms</label>
+            <textarea name="question" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Get AI Advice</button>
+    </form>
+
+    {% if advice %}
+    <div class="alert alert-info mt-4">
+        <strong>AI Advice:</strong> {{ advice }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

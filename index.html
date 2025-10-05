@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <h1 class="mb-3">Welcome to Dr. Khan's Telemedicine Portal</h1>
+    <p class="lead">{{ message if message else "Your virtual heart care assistant." }}</p>
+    <a href="/patient/register" class="btn btn-success btn-lg m-2">Register Patient</a>
+    <a href="/appointment/book" class="btn btn-warning btn-lg m-2">Book Appointment</a>
+    <a href="/ai/consult/form" class="btn btn-info btn-lg m-2">AI Symptom Checker</a>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4 mt-4">
+    <h2 class="mb-4">Book an Appointment</h2>
+    <form method="post" action="/appointment/book">
+        <div class="mb-3">
+            <label for="patient_name" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="patient_name" name="patient_name" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+            <label for="time" class="form-label">Appointment Time</label>
+            <input type="datetime-local" class="form-control" id="time" name="time" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</div>
+{% endblock %}

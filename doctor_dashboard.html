@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Doctor Dashboard</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h4>Appointments</h4>
+        <ul class="list-group">
+            {% for a in appointments %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ a.patient_name }} - {{ a.time }}
+                <a href="/doctor/appointment/delete/{{ a.id }}" class="btn btn-sm btn-danger">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h4>AI Consultations</h4>
+        <ul class="list-group">
+            {% for c in consults %}
+            <li class="list-group-item">
+                <strong>{{ c.patient_name }}</strong>: {{ c.question }}
+                <br><em>{{ c.ai_advice }}</em>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
